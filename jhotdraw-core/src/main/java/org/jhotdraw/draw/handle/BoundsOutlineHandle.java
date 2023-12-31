@@ -8,6 +8,8 @@
 package org.jhotdraw.draw.handle;
 
 import java.awt.*;
+
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.AttributeKey;
 import static org.jhotdraw.draw.AttributeKeys.*;
 import org.jhotdraw.draw.figure.Figure;
@@ -44,6 +46,7 @@ public class BoundsOutlineHandle extends AbstractHandle {
      *
      * @param owner
      */
+    @FeatureEntryPoint(value = "BoundsOutlineHandle constructor")
     public BoundsOutlineHandle(Figure owner, boolean isTransformHandle, boolean isHoverHandle) {
         super(owner);
         if (isTransformHandle) {

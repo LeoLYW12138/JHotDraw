@@ -7,6 +7,7 @@
  */
 package org.jhotdraw.samples.svg.gui;
 
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.gui.action.ButtonFactory;
 import org.jhotdraw.gui.plaf.palette.PaletteButtonUI;
 import org.jhotdraw.gui.plaf.palette.PaletteFormattedTextFieldUI;
@@ -57,6 +58,7 @@ public class FontToolBar extends AbstractToolBar {
         setDisclosureStateCount(3);
     }
 
+    @FeatureEntryPoint(value = "FontPallate")
     @Override
     public void setEditor(DrawingEditor newValue) {
         if (displayer != null) {
