@@ -60,7 +60,7 @@ public class FontToolBar extends AbstractToolBar {
         JFontChooser.loadAllFonts();
         setDisclosureStateCount(3);
     }
-    @FeatureEntryPoint(value="FontPallate")
+
     @Override
     public void setEditor(DrawingEditor newValue) {
         if (displayer != null) {
@@ -106,7 +106,7 @@ public class FontToolBar extends AbstractToolBar {
             };
         }
     }
-
+    @FeatureEntryPoint(value="FontPallate")
     @Override
     protected JComponent createDisclosedComponent(int state) {
         JPanel p = null;
