@@ -106,7 +106,7 @@
                 <version>2.22.2</version>
                 <configuration>
                     <argLine>
-                        -javaagent:/users/genor/.m2/repository/org/aspectj/aspectjweaver/1.9.9/aspectjweaver-1.9.9.jar -Dorg.aspectj.weaver.loadtime.configuration=default -Dorg.aspectj.tracing.factory=default -Dorg.aspectj.tracing.enabled=false --add-opens java.base/java.lang=ALL-UNNAMED
+                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/1.9.9/aspectjweaver-1.9.9.jar -Dorg.aspectj.weaver.loadtime.configuration=default -Dorg.aspectj.tracing.factory=default -Dorg.aspectj.tracing.enabled=false --add-opens java.base/java.lang=ALL-UNNAMED
                     </argLine>
                     <useSystemClassLoader>true</useSystemClassLoader>
                     <forkMode>always</forkMode>
