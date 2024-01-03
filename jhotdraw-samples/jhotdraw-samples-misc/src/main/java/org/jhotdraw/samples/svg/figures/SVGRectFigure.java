@@ -11,7 +11,6 @@ import java.awt.*;
 import java.awt.geom.*;
 import java.util.*;
 
-import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.FILL_COLOR;
 import static org.jhotdraw.draw.AttributeKeys.STROKE_CAP;
@@ -254,7 +253,6 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
         return cachedTransformedShape;
     }
 
-    @FeatureEntryPoint("getHitShape RECT")
     private Shape getHitShape() {
         if (cachedHitShape == null) {
             if (get(FILL_COLOR) != null || get(FILL_GRADIENT) != null) {
@@ -274,7 +272,6 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
      * @param tx The transformation.
      */
 
-    @FeatureEntryPoint("transform RECT")
     @Override
     public void transform(AffineTransform tx) {
         invalidateTransformedShape();
@@ -329,7 +326,6 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
     }
 
     // EDITING
-    @FeatureEntryPoint(value = "Create handles")
     @Override
     public Collection<Handle> createHandles(int detailLevel) {
         HandleStrategyFactory factory = new RectFigureHandlesFactory();

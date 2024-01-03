@@ -7,7 +7,6 @@
  */
 package org.jhotdraw.samples.svg.figures;
 
-import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -36,7 +35,6 @@ public class SVGRectRadiusHandle extends AbstractHandle {
     /**
      * Creates a new instance.
      */
-    @FeatureEntryPoint(value = "SVGRectRadiusHandle constructor")
     public SVGRectRadiusHandle(Figure owner) {
         super(owner);
     }

@@ -7,7 +7,6 @@
  */
 package org.jhotdraw.samples.svg.figures;
 
-import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.geom.*;
@@ -28,7 +27,6 @@ public class LinkHandle extends AbstractHandle {
     /**
      * Creates a new instance.
      */
-    @FeatureEntryPoint(value = "LinkHandle constructor")
     public LinkHandle(Figure owner) {
         super(owner);
     }
