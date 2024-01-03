@@ -10,6 +10,8 @@ package org.jhotdraw.samples.svg.figures;
 import java.awt.*;
 import java.awt.geom.*;
 import java.util.*;
+
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.FILL_COLOR;
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
@@ -56,6 +58,7 @@ public class SVGEllipseFigure extends SVGAttributedFigure implements SVGFigure {
     }
 
     // DRAWING
+    @FeatureEntryPoint(value = "SVGEllipseFigure")
     @Override
     protected void drawFill(Graphics2D g) {
         if (ellipse.width > 0 && ellipse.height > 0) {
@@ -92,6 +95,7 @@ public class SVGEllipseFigure extends SVGAttributedFigure implements SVGFigure {
         return (Rectangle2D.Double) ellipse.getBounds2D();
     }
 
+    @FeatureEntryPoint(value = "getDrawingArea")
     @Override
     public Rectangle2D.Double getDrawingArea() {
         Rectangle2D rx = getTransformedShape().getBounds2D();
@@ -116,6 +120,7 @@ public class SVGEllipseFigure extends SVGAttributedFigure implements SVGFigure {
         return getHitShape().contains(p);
     }
 
+    @FeatureEntryPoint(value = "getTransformedShape")
     private Shape getTransformedShape() {
         if (cachedTransformedShape == null) {
             if (get(TRANSFORM) == null) {
@@ -127,6 +132,7 @@ public class SVGEllipseFigure extends SVGAttributedFigure implements SVGFigure {
         return cachedTransformedShape;
     }
 
+    @FeatureEntryPoint(value = "getHitShape")
     private Shape getHitShape() {
         if (cachedHitShape == null) {
             if (get(FILL_COLOR) != null || get(FILL_GRADIENT) != null) {
@@ -154,6 +160,7 @@ public class SVGEllipseFigure extends SVGAttributedFigure implements SVGFigure {
      *
      * @param tx the transformation.
      */
+    @FeatureEntryPoint(value = "transform")
     @Override
     public void transform(AffineTransform tx) {
         if (get(TRANSFORM) != null

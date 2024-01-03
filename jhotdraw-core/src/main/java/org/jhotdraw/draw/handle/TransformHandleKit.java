@@ -7,6 +7,7 @@
  */
 package org.jhotdraw.draw.handle;
 
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.event.*;
@@ -74,6 +75,8 @@ public class TransformHandleKit {
     /**
      * Adds handles for scaling, moving, rotating and shearing a Figure.
      */
+
+    @FeatureEntryPoint(value = "TransformHandleKit.addTransformHandles")
     static public void addTransformHandles(Figure f, Collection<Handle> handles) {
         handles.add(new BoundsOutlineHandle(f, true, false));
         if (f.isTransformable()) {
