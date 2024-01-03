@@ -7,7 +7,6 @@
  */
 package org.jhotdraw.draw.handle;
 
-import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.event.*;
@@ -66,7 +65,6 @@ public class ResizeHandleKit {
      * Fills the given collection with handles at each the north, south, east, and west of the
      * figure.
      */
-    @FeatureEntryPoint(value = "ResizeHandleKit.addResizeHandles")
     static public void addResizeHandles(Figure f, Collection<Handle> handles) {
         handles.add(new BoundsOutlineHandle(f));
         if (f.isTransformable()) {
