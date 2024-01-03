@@ -8,7 +8,7 @@ public class GivenRectangle extends Stage<GivenRectangle> {
     private SVGRectFigure svgRectFigure;
 
     public GivenRectangle rectangleDrawnOnTheCanvas() {
-        svgRectFigure = new SVGRectFigure(0,0,100,100);
+        svgRectFigure = new SVGRectFigure(0, 0, 100, 100);
 
         return self();
     }

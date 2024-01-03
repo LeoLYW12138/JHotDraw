@@ -10,7 +10,6 @@ import java.util.Collection;
 import java.util.Collections;
 
 import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)

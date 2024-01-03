@@ -10,7 +10,7 @@ public class WhenHandleDragged extends Stage<WhenHandleDragged> {
     private SVGRectFigure svgRectFigure;
 
     public WhenHandleDragged handleIsDragged(SVGRectFigure rectFigure) {
-        Point2D.Double newPoint = new Point2D.Double(150,150);
+        Point2D.Double newPoint = new Point2D.Double(150, 150);
         rectFigure.setBounds(rectFigure.getStartPoint(), newPoint);
         svgRectFigure = rectFigure;
 

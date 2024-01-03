@@ -12,7 +12,7 @@ public class ThenRectangleResized extends Stage<ThenRectangleResized> {
         double expectedHeight = 150;
 
         assertEquals("Test if width is resized", expectedWidth, rectFigure.getBounds().getWidth(), 0.01);
-        assertEquals("Test if height is resized", expectedHeight, rectFigure.getBounds().getHeight(),0.01);
+        assertEquals("Test if height is resized", expectedHeight, rectFigure.getBounds().getHeight(), 0.01);
 
         return self();
     }
