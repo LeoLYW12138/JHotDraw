@@ -128,12 +128,29 @@ public class TextCreationTool extends CreationTool implements ActionListener {
     public void mouseReleased(MouseEvent evt) {
     }
 
+
+    public String splitText(String text){
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            char car = text.charAt(i);
+            result.append(car);
+            if (car != ' ' && i < text.length() - 1) {
+                result.append(" ");
+            }
+        }
+
+        return result.toString();
+    }
+
     protected void endEdit() {
         if (typingTarget != null) {
             typingTarget.willChange();
             final TextHolderFigure editedFigure = typingTarget;
             final String oldText = typingTarget.getText();
-            final String newText = textField.getText();
+
+            String textToUpdate = splitText(oldText);
+
+            final String newText = textToUpdate;
             if (newText.length() > 0) {
                 typingTarget.setText(newText);
             } else {

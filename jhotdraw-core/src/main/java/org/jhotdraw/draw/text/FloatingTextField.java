@@ -59,6 +59,11 @@ public class FloatingTextField {
         textField = new JTextField(20);
     }
 
+    public void setText(String text){
+        textField.setText(text);
+    }
+
+
     public void requestFocus() {
         textField.requestFocus();
     }
