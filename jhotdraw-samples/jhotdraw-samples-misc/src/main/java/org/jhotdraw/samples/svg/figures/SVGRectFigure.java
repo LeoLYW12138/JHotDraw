@@ -11,6 +11,8 @@ import java.awt.*;
 import java.awt.geom.*;
 import java.util.*;
 
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
+
 import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.FILL_COLOR;
 import static org.jhotdraw.draw.AttributeKeys.STROKE_CAP;
@@ -271,12 +273,12 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
      *
      * @param tx The transformation.
      */
-
     @Override
+    @FeatureEntryPoint("transform RECT")
     public void transform(AffineTransform tx) {
         invalidateTransformedShape();
         if (get(TRANSFORM) != null
-                ||
+                || //              (tx.getType() & (AffineTransform.TYPE_TRANSLATION | AffineTransform.TYPE_MASK_SCALE)) != tx.getType()) {
                 (tx.getType() & (AffineTransform.TYPE_TRANSLATION)) != tx.getType()) {
             if (get(TRANSFORM) == null) {
                 set(TRANSFORM, (AffineTransform) tx.clone());
