@@ -139,6 +139,7 @@ public class FloatingTextField {
         return textField.getPreferredSize();
     }
 
+    
     /**
      * Removes the overlay.
      */
