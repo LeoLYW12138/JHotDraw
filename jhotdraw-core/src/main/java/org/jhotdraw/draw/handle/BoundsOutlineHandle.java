@@ -8,6 +8,7 @@
 package org.jhotdraw.draw.handle;
 
 import java.awt.*;
+
 import org.jhotdraw.draw.AttributeKey;
 import static org.jhotdraw.draw.AttributeKeys.*;
 import org.jhotdraw.draw.figure.Figure;

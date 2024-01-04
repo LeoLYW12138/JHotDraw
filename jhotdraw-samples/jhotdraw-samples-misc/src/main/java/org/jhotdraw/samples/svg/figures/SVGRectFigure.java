@@ -12,20 +12,20 @@ import java.awt.geom.*;
 import java.util.*;
 
 import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
+
 import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.FILL_COLOR;
 import static org.jhotdraw.draw.AttributeKeys.STROKE_CAP;
 import static org.jhotdraw.draw.AttributeKeys.STROKE_JOIN;
 import static org.jhotdraw.draw.AttributeKeys.STROKE_MITER_LIMIT;
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
-import org.jhotdraw.draw.handle.BoundsOutlineHandle;
 import org.jhotdraw.draw.handle.Handle;
-import org.jhotdraw.draw.handle.ResizeHandleKit;
-import org.jhotdraw.draw.handle.TransformHandleKit;
 import org.jhotdraw.geom.Geom;
 import org.jhotdraw.geom.GrowStroke;
 import org.jhotdraw.samples.svg.Gradient;
 import org.jhotdraw.samples.svg.SVGAttributeKeys;
+import org.jhotdraw.samples.svg.figures.handles.*;
+
 import static org.jhotdraw.samples.svg.SVGAttributeKeys.*;
 
 /**
@@ -61,6 +61,7 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
     }
     /**
      */
+
     private RoundRectangle2D.Double roundrect;
     /**
      * This is used to perform faster drawing.
@@ -74,6 +75,7 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
     /**
      * Creates a new instance.
      */
+
     public SVGRectFigure() {
         this(0, 0, 0, 0);
     }
@@ -253,15 +255,14 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
         return cachedTransformedShape;
     }
 
-    @FeatureEntryPoint("getHitShape RECT")
     private Shape getHitShape() {
         if (cachedHitShape == null) {
             if (get(FILL_COLOR) != null || get(FILL_GRADIENT) != null) {
                 cachedHitShape = new GrowStroke(
-                        (float) SVGAttributeKeys.getStrokeTotalWidth(this, 1.0) / 2f,
-                        (float) SVGAttributeKeys.getStrokeTotalMiterLimit(this, 1.0)).createStrokedShape(getTransformedShape());
+                        (float) AttributeKeys.getStrokeTotalWidth(this, 1.0) / 2f,
+                        (float) AttributeKeys.getStrokeTotalMiterLimit(this, 1.0)).createStrokedShape(getTransformedShape());
             } else {
-                cachedHitShape = SVGAttributeKeys.getHitStroke(this, 1.0).createStrokedShape(getTransformedShape());
+                cachedHitShape = AttributeKeys.getHitStroke(this, 1.0).createStrokedShape(getTransformedShape());
             }
         }
         return cachedHitShape;
@@ -328,25 +329,10 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
 
     // EDITING
     @Override
-    @FeatureEntryPoint(value = "Create handles")
     public Collection<Handle> createHandles(int detailLevel) {
-        LinkedList<Handle> handles = new LinkedList<Handle>();
-        switch (detailLevel % 2) {
-            case -1: // Mouse hover handles
-                handles.add(new BoundsOutlineHandle(this, false, true));
-                break;
-            case 0:
-                ResizeHandleKit.addResizeHandles(this, handles);
-                handles.add(new SVGRectRadiusHandle(this));
-                handles.add(new LinkHandle(this));
-                break;
-            case 1:
-                TransformHandleKit.addTransformHandles(this, handles);
-                break;
-            default:
-                break;
-        }
-        return handles;
+        HandleStrategyFactory factory = new RectFigureHandlesFactory();
+        HandleStrategy handleStrategy = factory.createHandleStrategy(detailLevel);
+        return handleStrategy.createHandles(this);
     }
 
     // CLONING

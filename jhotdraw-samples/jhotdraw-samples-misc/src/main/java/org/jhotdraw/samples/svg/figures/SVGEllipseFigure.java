@@ -12,6 +12,7 @@ import java.awt.geom.*;
 import java.util.*;
 
 import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
+
 import org.jhotdraw.draw.*;
 
 import static org.jhotdraw.draw.AttributeKeys.FILL_COLOR;

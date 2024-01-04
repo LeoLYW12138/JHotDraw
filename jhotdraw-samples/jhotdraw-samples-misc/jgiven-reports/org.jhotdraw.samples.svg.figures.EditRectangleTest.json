@@ -1,0 +1,114 @@
+{
+  "className": "org.jhotdraw.samples.svg.figures.EditRectangleTest",
+  "name": "Edit Rectangle",
+  "scenarios": [
+    {
+      "className": "org.jhotdraw.samples.svg.figures.EditRectangleTest",
+      "testMethodName": "ResizedRectangle",
+      "description": "Resized rectangle",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "rectangle drawn on the canvas",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "rectangle drawn on the canvas"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 5049500,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "get svg rect figure",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "get svg rect figure"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 62900,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "handle is dragged",
+              "words": [
+                {
+                  "value": "handle is dragged"
+                },
+                {
+                  "value": "SVGRectFigure@1704214570",
+                  "argumentInfo": {
+                    "argumentName": "rectFigure",
+                    "formattedValue": "SVGRectFigure@1704214570"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 7359000,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "get rect figure",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "get rect figure"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 57500,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "rectangle resized",
+              "words": [
+                {
+                  "value": "rectangle resized"
+                },
+                {
+                  "value": "SVGRectFigure@1704214570",
+                  "argumentInfo": {
+                    "argumentName": "rectFigure",
+                    "formattedValue": "SVGRectFigure@1704214570"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 926400,
+              "depth": 0,
+              "parentFailed": false
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "durationInNanos": 51031900
+        }
+      ],
+      "casesAsTable": false,
+      "durationInNanos": 51031900
+    }
+  ],
+  "tagMap": {}
+}
