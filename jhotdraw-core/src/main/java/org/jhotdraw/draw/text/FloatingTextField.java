@@ -59,7 +59,7 @@ public class FloatingTextField {
         textField = new JTextField(20);
     }
 
-    public void setText(String text){
+    public void changeText(String text){
         textField.setText(text);
     }
 
